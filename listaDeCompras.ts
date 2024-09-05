@@ -1,9 +1,9 @@
-import { addItem} from './functions/addItem';
-import { listarItens } from "./functions/listarItens";
-import { editarItem } from "./functions/editarItem";
-import { removeItem } from "./functions/removeItem";
-import { situation } from "./functions/situation";
-import { resumoLista } from "./functions/resumoLista";
+import { addItem} from './functions/addItem.js';
+import { listarItens } from "./functions/listarItens.js";
+import { editarItem } from "./functions/editarItem.js";
+import { removeItem } from "./functions/removeItem.js";
+import { situation } from "./functions/situation.js";
+import { resumoLista } from "./functions/resumoLista.js";
 //-----------
 import { listaDeCompra } from "./bancoDeDados/pegarArquivo.js";
 
