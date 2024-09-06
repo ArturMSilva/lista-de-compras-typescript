@@ -1,12 +1,13 @@
 import { listaDeCompra } from "../bancoDeDados/pegarArquivo";
 import { FILE_NAME } from "../listaDeCompras";
 import { exibir } from "./exibir";
+import { Objeto } from "./interfaceObjeto";
 
 export async function situation() {
     let lista = await listaDeCompra()
     exibir(lista);
-    const nome = prompt("Digite o nome do item: ").toLowerCase()
-    const i = lista.findIndex(elemento => {
+    const nome = prompt("Digite o nome do item: ")?.toLowerCase()
+    const i = lista.findIndex((elemento: Objeto) => {
         return elemento.nome.toLowerCase() === nome
     })
 
