@@ -1,19 +1,21 @@
-function totalItens(lista) {
-    let listaResumo = []
+import { Objeto } from "./interfaceObjeto";
+
+function totalItens(lista: Objeto[]) {
+    let listaResumo: object[] = []
 
     const numeroDeItens = lista.length
 
     const obj = {
-        "Número De Itens": numeroDeItens
+        "Numero De Itens": numeroDeItens
     }
     listaResumo.push(obj)
     console.log("\nTotal de Itens:");
     console.table(listaResumo)
 }
 
-function itensPorCategoria(lista) {
+function itensPorCategoria(lista: Objeto[]) {
     let listaCategoria = {}
-    lista.forEach(item => {
+    lista.forEach((item: Objeto) => {
         if (listaCategoria[item.categoria]) {
             listaCategoria[item.categoria]++
         } else {
@@ -24,11 +26,11 @@ function itensPorCategoria(lista) {
     console.table(listaCategoria);  
 }
 
-function itensPorStatus(lista) {
+function itensPorStatus(lista: Objeto[]) {
     let listaComprado = {}
     let listaNaoComprado = {}
 
-    lista.forEach(item => {
+    lista.forEach((item: Objeto) => {
         if (item.status == "comprado ✅") {
             if (listaComprado[item.status]) {
                 listaComprado[item.status]++;
@@ -53,7 +55,7 @@ function itensPorStatus(lista) {
         console.table(listaStatus);  
 }
 
-export const resumoLista = (lista) => {
+export const resumoLista = (lista: Objeto[]) => {
     totalItens(lista)
     itensPorCategoria(lista)
     itensPorStatus(lista)
