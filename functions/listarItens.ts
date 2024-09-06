@@ -1,4 +1,6 @@
-export const listarItens = (lista) => {
+import { Objeto } from "./interfaceObjeto";
+
+export const listarItens = (lista: Objeto[]) => {
     console.log("Ordem:\n1 - Alfabética\n2 - Categoria\n3 - Quantidade");
     const op = Number(prompt("Digite o número da opção: "))
 
@@ -9,7 +11,7 @@ export const listarItens = (lista) => {
                 console.table(lista);
                 break;
             case 2:
-                const categoria = prompt("Digite a categoria do item: ").toLowerCase();
+                const categoria = prompt("Digite a categoria do item: ")?.toLowerCase(); //encadeamento opcional
                 const produtosFiltrados = lista.filter(item => item.categoria.toLowerCase() === categoria);
                 console.table(produtosFiltrados);
                 break;
