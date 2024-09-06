@@ -1,3 +1,4 @@
+import { Objeto } from "../functions/interfaceObjeto";
 import { FILE_NAME } from "../listaDeCompras";
 
 export async function listaDeCompra() {
@@ -7,15 +8,15 @@ export async function listaDeCompra() {
     return objeto;
 }
 
-export async function adicionaItem(item) {
+export async function adicionaItem(item: Objeto): Promise<void> {
     const itens = await listaDeCompra();
     itens.push(item);
     await Bun.write(FILE_NAME, JSON.stringify(itens));
 }
 
-export async function remove(item){
+export async function remove(item: Objeto): Promise<void> {
     const itens = await listaDeCompra();
-    const index =  itens.findIndex((i) => i.nome === item.nome)
+    const index =  itens.findIndex((i: Objeto) => i.nome === item.nome)
     itens.splice(index, 1)
     await Bun.write(FILE_NAME, JSON.stringify(itens));
 }
